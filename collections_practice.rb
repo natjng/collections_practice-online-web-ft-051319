@@ -10,6 +10,12 @@ def sort_array_char_count(array)
   array.sort_by {|x| x.length}
 end
 
+# def sort_array_char_count(array)
+#   array.sort do |left, right|
+#     left.length <=> right.length
+#   end
+# end
+
 def swap_elements(array)
   array[1], array[2] = array[2], array[1]
   array
@@ -23,13 +29,49 @@ def kesha_maker(array)
   array.each {|i| i.sub!(i[2],"$")}
 end
 
+# def kesha_maker(array)
+#   array.each do |item|
+#     item[2] = "$"
+#   end
+# end
+
 def find_a(array)
   array.select {|i| i.start_with?("a")}
 end
 
+# def find_a(array)
+#   array.find_all do |word|
+#     word[0] == "a"
+#   end
+
+#   # using select method
+#     # array.select do |word|
+#     #   word[0] == "a"
+#     # end
+#end
+
 def sum_array(array)
   array.sum
 end
+
+# def sum_array(array)
+#   sum = 0
+#   array.each do |num|
+#     sum+=num
+#   end
+#   sum
+
+#   # using reduce method
+#     # array.reduce(:+)
+
+#   # using inject method (short)
+#     # array.inject(:+)
+
+#   # using inject method (long)
+#     # array.inject do |sum,x|
+#     #  sum + x
+#     # end
+# end
 
 def add_s(array)
   array.each_with_index.collect do |e,i| 
